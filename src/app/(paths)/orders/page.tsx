@@ -32,7 +32,7 @@ export default function OrdersPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div>ORDERS</div>
+      <div className="flex justify-center items-center min-h-[calc(100vh-56px-64px-20px-24px-56px-48px)]">ORDERS</div>
     </ContentLayout>
   );
 }
