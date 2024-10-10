@@ -12,7 +12,7 @@ import {
   TooltipProvider
 } from "@/components/ui/tooltip";
 
-export function ModeToggle() {
+export function ThemeSwitch() {
   const { setTheme, theme } = useTheme();
 
   return (

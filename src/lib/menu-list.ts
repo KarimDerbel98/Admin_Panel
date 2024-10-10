@@ -46,30 +46,40 @@ export function getMenuList(pathname: string): Group[] {
       menus: [
         {
           href: "",
-          label: "Posts",
-          active: pathname.includes("/posts"),
-          icon: SquarePen,
+          label: "Users",
+          active: pathname.includes("/users"),
+          icon: Users,
           submenus: [
             {
-              href: "/posts",
-              label: "All Posts"
+              href: "/users",
+              label: "All Users"
             },
             {
-              href: "/posts/new",
-              label: "New Post"
+              href: "/users/roles",
+              label: "Roles & Permissions"
             }
           ]
         },
         {
-          href: "/categories",
-          label: "Categories",
-          active: pathname.includes("/categories"),
-          icon: Bookmark
+          href: "",
+          label: "Products",
+          active: pathname.includes("/products"),
+          icon: Bookmark,
+          submenus: [
+            {
+              href: "/products",
+              label: "All Products"
+            },
+            {
+              href: "/products/categories",
+              label: "Categories"
+            },
+          ]
         },
         {
-          href: "/tags",
-          label: "Tags",
-          active: pathname.includes("/tags"),
+          href: "/orders",
+          label: "Orders",
+          active: pathname.includes("/orders"),
           icon: Tag
         }
       ]
@@ -78,8 +88,8 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: "Settings",
       menus: [
         {
-          href: "/users",
-          label: "Users",
+          href: "/test",
+          label: "test",
           active: pathname.includes("/users"),
           icon: Users
         },
