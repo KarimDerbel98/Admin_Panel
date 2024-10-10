@@ -5,7 +5,9 @@ import {
   Bookmark,
   SquarePen,
   LayoutGrid,
-  LucideIcon
+  LucideIcon,
+  PackageSearch,
+  Truck,
 } from "lucide-react";
 
 type Submenu = {
@@ -64,7 +66,7 @@ export function getMenuList(pathname: string): Group[] {
           href: "",
           label: "Products",
           active: pathname.includes("/products"),
-          icon: Bookmark,
+          icon: PackageSearch,
           submenus: [
             {
               href: "/products",
@@ -80,7 +82,7 @@ export function getMenuList(pathname: string): Group[] {
           href: "/orders",
           label: "Orders",
           active: pathname.includes("/orders"),
-          icon: Tag
+          icon: Truck
         }
       ]
     },
@@ -88,17 +90,27 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: "Settings",
       menus: [
         {
-          href: "/test",
-          label: "test",
-          active: pathname.includes("/users"),
-          icon: Users
-        },
-        {
           href: "/account",
           label: "Account",
           active: pathname.includes("/account"),
           icon: Settings
-        }
+        },
+        {
+          href: "",
+          label: "General Settings",
+          active: pathname.includes("/settings"),
+          icon: PackageSearch,
+          submenus: [
+            {
+              href: "/settings/language",
+              label: "Language"
+            },
+            {
+              href: "/settings/theme",
+              label: "Theme"
+            },
+          ]
+        },
       ]
     }
   ];
