@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className="flex flex-col items-center justify-center h-screen">
       <Button variant="default" asChild>
         <Link href="/dashboard">
-          Demo
+          Admin Panel
           <ArrowRightIcon className="ml-2" />
         </Link>
       </Button>
