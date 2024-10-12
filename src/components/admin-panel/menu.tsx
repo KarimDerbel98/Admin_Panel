@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Ellipsis, LogOut } from "lucide-react";
+import { Ellipsis, Cookie } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
@@ -26,8 +26,8 @@ export function Menu({ isOpen }: MenuProps) {
 
   return (
     <ScrollArea className="[&>div>div[style]]:!block">
-      <nav className="mt-8 h-full w-full">
-        <ul className="flex flex-col min-h-[calc(100vh-48px-36px-16px-32px)] lg:min-h-[calc(100vh-32px-40px-32px)] items-start space-y-1 px-2">
+      <nav className="mt-8 h-full w-full flex flex-col">
+        <ul className="flex flex-col min-h-[calc(100vh-48px-36px-16px-32px-40px)] lg:min-h-[calc(100vh-32px-40px-32px-40px)] items-start space-y-1 px-2">
           {menuList.map(({ groupLabel, menus }, index) => (
             <li className={cn("w-full", groupLabel ? "pt-5" : "")} key={index}>
               {(isOpen && groupLabel) || isOpen === undefined ? (
@@ -109,11 +109,11 @@ export function Menu({ isOpen }: MenuProps) {
                 <TooltipTrigger asChild>
                   <Button
                     onClick={() => {}}
-                    variant="outline"
+                    variant="ghost"
                     className="w-full justify-center h-10 mt-5"
                   >
                     <span className={cn(isOpen === false ? "" : "mr-4")}>
-                      <LogOut size={18} />
+                      <Cookie size={18} />
                     </span>
                     <p
                       className={cn(
@@ -121,17 +121,25 @@ export function Menu({ isOpen }: MenuProps) {
                         isOpen === false ? "opacity-0 hidden" : "opacity-100"
                       )}
                     >
-                      Sign out
+                      Cookie Settings
                     </p>
                   </Button>
                 </TooltipTrigger>
                 {isOpen === false && (
-                  <TooltipContent side="right">Sign out</TooltipContent>
+                  <TooltipContent side="right">Cookie Settings</TooltipContent>
                 )}
               </Tooltip>
             </TooltipProvider>
           </li>
         </ul>
+        <div className="sidebar-footer px-4 py-2 mt-auto text-center">
+          <p className={cn(
+            "text-sm text-muted-foreground",
+            isOpen === false ? "opacity-0 hidden" : "opacity-100"
+          )}>
+            Version 1.0.0
+          </p>
+        </div>
       </nav>
     </ScrollArea>
   );
